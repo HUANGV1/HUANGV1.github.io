@@ -1,0 +1,110 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+nav {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgb(196, 196, 196);
+  box-sizing: border-box;
+
+  z-index: 1000;
+}
+
+
+#nav-left, #nav-center, #nav-right {
+    display: flex;
+    align-items: center;
+}
+
+#nav-left {
+    font-size: 30px; 
+    font-weight: bold;
+}
+
+#nav-center {
+    gap: 50px;
+    font-size: 30px; 
+    font-weight: bold;
+}
+
+#nav-center a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav-center a:hover {
+    text-decoration: underline;
+}
+
+#nav-right {
+    gap: 20px;
+}
+
+#nav-right img {
+    width: 34x;
+    height: 34px;
+}
+
+#nav-right img:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+#intro-container {
+  
+  display: flex;
+  align-items: center;             /* ✅ Vertically center */
+  justify-content: center;         /* ✅ Horizontally center */
+  gap: 100px;
+  padding: 0 80px;                 /* Optional side padding */
+  box-sizing: border-box;
+  margin-top: 150px;
+  
+}
+
+#intro-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center; /* ✅ vertically center heading + text */
+    align-items: flex-start; /* ✅ keep text aligned to the left */
+    height: 100%;
+    
+}
+
+
+#intro-left p {
+    margin: 0px;
+    font-size: 20px;
+}
+
+#intro-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;            /* ✅ ensures vertical centering inside parent */
+    
+}
+
+#intro-right img {
+    width: 200px;
+    height: auto;
+}
