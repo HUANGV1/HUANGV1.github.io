@@ -1,5 +1,8 @@
-* {
-    font-family: 'Inter';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -11,18 +14,22 @@ body {
 
 nav {
   position: fixed;
-  top: 1px;
-  left: 5px;
-  right: 5px;
+  top: -1px;
+  left: -100vw;
+  right: -100vw;
 
   display: flex;
   justify-content: space-between;
   align-items: center; 
+  background-color: white;
   
   padding: 15px;
   box-sizing: border-box;
 
   z-index: 1000;
+
+  border-bottom: 2px solid gainsboro;
+  width: calc(300vw);
 }
 
 
@@ -35,6 +42,11 @@ nav {
 #nav-left {
     font-size: 25px; 
     font-weight: bold;
+    margin-left: 100vw;
+}
+
+#nav-right {
+    margin-right: 100vw;
 }
 
 #nav-center {
@@ -45,16 +57,17 @@ nav {
 
 #nav-center a {
     text-decoration: none;
-    color: grey;
+    color: rgb(105, 105, 105);
 }
 
 #nav-center a:hover {
     transform: scale(1.01);
-    color: rgb(90, 90, 90);
+    color: rgb(39, 39, 39);
 }
 
 #nav-right {
     gap: 20px;
+    padding-right: 15px;
 }
 
 #nav-right img {
@@ -63,7 +76,7 @@ nav {
 }
 
 #nav-right img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .background-white {
@@ -84,6 +97,7 @@ nav {
   box-sizing: border-box;
   margin-top: 60px;
   margin-bottom: 60px;
+  padding-top: 10px;
 }
 
 #intro-container h1 {
@@ -102,5 +116,67 @@ nav {
     background: linear-gradient(90deg, #8e2de2, #4a00e0, #007cf0);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    justify-content: center;
+    padding: 1vw 1vw;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;            /* Wrap cards on small screens */
+    justify-content: center;
+    gap: 3vw;
+    width: 100%;
+    max-width: 1200px;          /* Optional: limit width on large screens */
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+.project-card {
+    flex: 1 1 280px;
+    max-width: 350px;
+    min-width: 100px;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+#project-container h1 {
+    font-size: 50px;
+}
+
+
+#experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    justify-content: center;
+    padding: 1vw 1vw;
+}
+
+
+
+#experience-container h1 {
+    font-size: 50px;
 }
 
