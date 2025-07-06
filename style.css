@@ -5,6 +5,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -126,6 +130,7 @@ nav {
     gap: 3vw;
     justify-content: center;
     padding: 1vw 1vw;
+    scroll-margin: 50px;
 }
 
 .cards {
@@ -172,6 +177,7 @@ nav {
     gap: 3vw;
     justify-content: center;
     padding: 1vw 1vw;
+    scroll-margin: 50px;
 }
 
 
