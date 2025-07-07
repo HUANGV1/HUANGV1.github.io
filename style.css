@@ -49,6 +49,35 @@ nav {
     margin-left: 100vw;
 }
 
+#nav-name a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav-name {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+#nav-name::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #8e2de2, #4a00e0, #007cf0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+#nav-name:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 #nav-right {
     margin-right: 100vw;
 }
@@ -171,6 +200,11 @@ nav {
 }
 
 
+#experience-container {
+    display: flex;
+    flex-direction: column;
+    scroll-margin: 50px;
+}
 
 #experience-container h1 {
     font-size: 50px;
@@ -180,7 +214,7 @@ nav {
 .experience-split {
   display: flex;
   max-width: 900px;
-  margin: 80px auto;
+  margin: 30px auto;
   gap: 40px;
 }
 
@@ -190,7 +224,7 @@ nav {
 }
 
 .exp-left img {
-  width: 100px;
+  width: 200px;
   margin-bottom: 10px;
 }
 
@@ -249,4 +283,3 @@ nav {
     color: rgb(119, 119, 119);
     font-size: 0.9rem;
 }
-
