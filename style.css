@@ -92,6 +92,8 @@ nav {
 }
 
 
+
+
 #intro-container {
   
   display: flex;
@@ -101,7 +103,7 @@ nav {
   box-sizing: border-box;
   margin-top: 60px;
   margin-bottom: 60px;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 #intro-container h1 {
@@ -169,20 +171,82 @@ nav {
 }
 
 
-#experience-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 3vw;
-    justify-content: center;
-    padding: 1vw 1vw;
-    scroll-margin: 50px;
+
+#experience-container h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.experience-split {
+  display: flex;
+  max-width: 900px;
+  margin: 80px auto;
+  gap: 40px;
+}
+
+.exp-left {
+  flex: 1;
+  text-align: center;
+}
+
+.exp-left img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.exp-right {
+  flex: 3;
+}
+
+.exp-right h3 {
+  margin-top: 0;
+  font-size: 25px;
 }
 
 
 
-#experience-container h1 {
-    font-size: 50px;
+#footer-content {
+    background-color: rgb(238, 238, 238);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#footer-content h3 {
+    margin-bottom: 10px;
+}
+
+#footer-content a{
+    text-decoration: none;
+    color: black;
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#links span:hover {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0, #007cf0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 1.2rem;
+}
+
+#footer-content p {
+    padding-top: 10px;
+    color: rgb(119, 119, 119);
+    font-size: 0.9rem;
 }
 
