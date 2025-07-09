@@ -1,4 +1,4 @@
-/*
+
 const cards = document.querySelectorAll('.project-card');
 const overlay = document.getElementById('overlay');
 
@@ -28,4 +28,3 @@ document.addEventListener('keydown', e=>{
         }
     }
 });
-*/
