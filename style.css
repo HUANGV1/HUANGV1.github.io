@@ -15,6 +15,42 @@ body {
     overflow-x: hidden; /* prevents scroll bar from showing up */
 }
 
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+}
+
+#overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-card.active { /* EXPLAIN */
+    position: fixed;
+    top: 100%;
+    left: 25%;
+    transform: translateY(-50vh);
+    z-index: 1002;
+    width: 90vw;
+    max-width: 600px;
+    height: auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-y: auto;
+    max-height: 90vh;
+    display: block; /* overrides flex if needed */
+    aspect-ratio: auto; /* override aspect ratio */
+}
+
+
 
 nav {
   position: fixed;
@@ -190,7 +226,7 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
+.project-card:not(.active):hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
@@ -283,3 +319,4 @@ nav {
     color: rgb(119, 119, 119);
     font-size: 0.9rem;
 }
+
