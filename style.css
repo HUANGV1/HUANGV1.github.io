@@ -15,6 +15,8 @@ body {
     overflow-x: hidden; /* prevents scroll bar from showing up */
 }
 
+
+/*
 #overlay {
     position: fixed;
     inset: 0;
@@ -30,10 +32,10 @@ body {
     pointer-events: auto;
 }
 
-.project-card.active { /* EXPLAIN */
+.project-card.active { 
     position: fixed;
     top: 100%;
-    left: 25%;
+    left: calc(45vw - 0.5em);
     transform: translateY(calc(-70vh));
     z-index: 1002;
     width: 90vw;
@@ -46,9 +48,10 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow-y: auto;
     max-height: 90vh;
-    display: block; /* overrides flex if needed */
-    aspect-ratio: auto; /* override aspect ratio */
+    display: block; 
+    aspect-ratio: auto; 
 }
+*/
 
 
 
@@ -104,7 +107,7 @@ nav {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background: linear-gradient(90deg, #8e2de2, #4a00e0, #007cf0);
+  background: linear-gradient(90deg, #ff6a00, #ff8e00, #ffc300);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
@@ -132,6 +135,11 @@ nav {
 #nav-center a:hover {
     transform: scale(1.01);
     color: rgb(39, 39, 39);
+    
+    background: linear-gradient(90deg, #ff6a00, #ff8e00, #ffc300);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 
 #nav-right {
@@ -142,6 +150,7 @@ nav {
 #nav-right img {
     width: 34x;
     height: 34px;
+    transition: transform 0.3s ease;
 }
 
 #nav-right img:hover {
@@ -184,7 +193,7 @@ nav {
 }
 
 #intro-container span {
-    background: linear-gradient(90deg, #8e2de2, #4a00e0, #007cf0);
+    background: linear-gradient(90deg, #ff6a00, #ff8e00, #ffc300);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -299,7 +308,7 @@ nav {
 }
 
 #links span:hover {
-    background: linear-gradient(90deg, #8e2de2, #4a00e0, #007cf0);
+    background: linear-gradient(90deg, #ff6a00, #ff8e00, #ffc300);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
