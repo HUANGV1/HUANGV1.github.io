@@ -34,7 +34,7 @@ body {
     position: fixed;
     top: 100%;
     left: 25%;
-    transform: translateY(-50vh);
+    transform: translateY(calc(-70vh));
     z-index: 1002;
     width: 90vw;
     max-width: 600px;
