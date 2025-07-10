@@ -1,0 +1,15 @@
+- body
+- nav (element)
+- nav-left (id)
+- nav-center (id)
+- nav-name a 
+- nav-center a 
+- intro-container p
+- project container (id)
+- project card (class)
+- experience container (id)
+- footer content (id)
+- footer content a 
+- footer content p
+
+- 
