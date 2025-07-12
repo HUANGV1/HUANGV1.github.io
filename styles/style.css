@@ -229,10 +229,12 @@ nav.dark-mode {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
     justify-content: center;
     gap: 3rem;
-    width: 60rem;
+    width: 100%;
+    max-width: 70rem;
+    padding: 0 1rem;
     box-sizing: border-box;
     padding-bottom: 3rem;
 }
@@ -240,6 +242,7 @@ nav.dark-mode {
 .project-card {
     width: 20rem;
     min-width: 100px;
+    max-width: 300px;
     aspect-ratio: 3 / 4;
     border-radius: 1rem;
     background-color: white;
