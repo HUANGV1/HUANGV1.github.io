@@ -17,19 +17,39 @@ body {
 }
 
 body.dark-mode {
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(19, 19, 24);
 }
 
-#dark-mode-toggle-button {
-    font-family: 'Inter', sans-serif;
-    border: 3px solid rgb(170, 170, 170);
-    background-color: #e3e3e3;
-    border-radius: 7px;
-    transition: transform 0.3s ease;
+.toggle-switch {
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: background 0.3s ease;
 }
 
-#dark-mode-toggle-button:hover {
-    transform: scale(1.05);
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+body.dark-mode .toggle-switch {
+  background: #4a4a4a;
+}
+
+body.dark-mode .toggle-thumb {
+  transform: translateX(30px);
+  background: #f5d742;
 }
 
 
@@ -43,7 +63,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center; 
-  background-color: white;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);      
   
   padding: 15px;
   box-sizing: border-box;
@@ -55,7 +77,8 @@ nav {
 }
 
 nav.dark-mode {
-    background-color: rgb(50, 50, 50);
+    background-color: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(10px);    
     border-color: #989898;
 }
 
@@ -145,9 +168,9 @@ nav.dark-mode {
 }
 
 #nav-right img {
-    width: 34x;
+    width: 34px;
     height: 34px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.5s ease;
 }
 
 #nav-right img:hover {
@@ -159,14 +182,13 @@ nav.dark-mode {
 }
 
 .background-gray {
-    background-color: #f2f5fd;
+    background-color: #fff1df;
 }
 
 
 
 
 #intro-container {
-  
   display: flex;
   align-items: center;             /* ✅ Vertically center */
   flex-direction: column;
@@ -178,7 +200,7 @@ nav.dark-mode {
 }
 
 #intro-container.dark-mode {
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(19, 19, 24);
 }
 
 #intro-container h1 {
@@ -188,9 +210,10 @@ nav.dark-mode {
 
 #intro-container p {
     padding: 0px, 80px;
+    max-width: 50rem;
     font-size: 40;
-    font-weight: 550;
-    color: gray;
+    font-weight: 350;
+    color: rgb(105, 105, 105);
 }
 
 #intro-container.dark-mode p {
@@ -217,10 +240,11 @@ nav.dark-mode {
     align-items: center;
     gap: 3rem;
     justify-content: center;
+    scroll-margin: 3rem;
 }
 
 #project-container.dark-mode {
-    background-color: rgb(95, 95, 95);
+    background-color: rgb(36, 36, 41);
 }
 
 #project-container h1.dark-mode {
@@ -229,33 +253,50 @@ nav.dark-mode {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
     gap: 3rem;
     width: 100%;
     max-width: 70rem;
-    padding: 0 1rem;
+    padding: 0 1.5rem 3rem;
+    margin: 0 auto;
     box-sizing: border-box;
-    padding-bottom: 3rem;
 }
 
 .project-card {
-    width: 20rem;
-    min-width: 100px;
-    max-width: 300px;
-    aspect-ratio: 3 / 4;
-    border-radius: 1rem;
     background-color: white;
+    border-radius: 1rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    box-sizing: border-box;
+    align-items: flex-start;
+    gap: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-card img {
+    width: 10rem;
+    height: auto;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .project-card.dark-mode {
-    background-color: rgb(183, 183, 183);
+    background-color: rgb(76, 76, 83);
+}
+
+.project-card.dark-mode p,
+.project-card.dark-mode h3 {
+  color: white;
 }
 
 .project-card:not(.active):hover {
@@ -275,7 +316,7 @@ nav.dark-mode {
 }
 
 #experience-container.dark-mode {
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(19, 19, 24);
 }
 
 #experience-container h1 {
@@ -331,7 +372,7 @@ nav.dark-mode {
 }
 
 #footer-content.dark-mode {
-    background-color: rgb(117, 117, 117);
+    background-color: rgb(25, 25, 31);
 }
 
 #footer-content h3 {

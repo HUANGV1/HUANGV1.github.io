@@ -19,64 +19,38 @@ const footerContentA = document.querySelector('#footer-content a');
 const footerContentP = document.querySelector('#footer-content p');
 const footerContentH2 = document.querySelector('#footer-content h2');
 const footerContentH3 = document.querySelector('#footer-content h3');
+const githubLogoSrc = document.getElementById('github-logo');
 
-darkModeButton.addEventListener('click', ()=>{
-    if (darkModeButton.textContent=='DARK MODE') {
-        document.body.classList.add('dark-mode');
-        nav.classList.add('dark-mode');
-        navLeft.classList.add('dark-mode');
-        navCenter.classList.add('dark-mode');
-        navNameA.classList.add('dark-mode');
-        navCenterA.classList.add('dark-mode');
-        introContainer.classList.add('dark-mode');
-        introContainerP.classList.add('dark-mode');
-        introContainerSpan.classList.add('dark-mode');
-        projectContainer.classList.add('dark-mode');
-        projectContainerH1.classList.add('dark-mode');
-        for (const card of projectCard) {
-            card.classList.add('dark-mode');
-        }
-        experienceContainer.classList.add('dark-mode');
-        experienceContainerH1.classList.add('dark-mode');
-        experienceContainerH3.classList.add('dark-mode');
-        experienceContainerP.forEach(p => p.classList.add('dark-mode'));
-        footerContent.classList.add('dark-mode');
-        footerContentA.classList.add('dark-mode');
-        footerContentP.classList.add('dark-mode');
-        footerContentH2.classList.add('dark-mode');
-        footerContentH3.classList.add('dark-mode');
-        darkModeButton.textContent='LIGHT MODE';
-        console.log('SWITCHED TO DARK');
-        console.log(getComputedStyle(document.body).backgroundColor)
-    } else {
-        document.body.classList.remove('dark-mode');
-        darkModeButton.textContent='DARK MODE';
-        document.body.classList.remove('dark-mode');
-        nav.classList.remove('dark-mode');
-        navLeft.classList.remove('dark-mode');
-        navCenter.classList.remove('dark-mode');
-        navNameA.classList.remove('dark-mode');
-        navCenterA.classList.remove('dark-mode');
-        introContainer.classList.remove('dark-mode');
-        introContainerP.classList.remove('dark-mode');
-        introContainerSpan.classList.remove('dark-mode');
-        projectContainer.classList.remove('dark-mode');
-        projectContainerH1.classList.remove('dark-mode');
-        for (const card of projectCard) {
-            card.classList.remove('dark-mode');
-        }
-        experienceContainer.classList.remove('dark-mode');
-        experienceContainerH1.classList.remove('dark-mode');
-        experienceContainerH3.classList.remove('dark-mode');
-        experienceContainerP.forEach(p => p.classList.remove('dark-mode'));
-        footerContent.classList.remove('dark-mode');
-        footerContentA.classList.remove('dark-mode');
-        footerContentP.classList.remove('dark-mode');
-        footerContentH2.classList.remove('dark-mode');
-        footerContentH3.classList.remove('dark-mode');
-        darkModeButton.textContent='DARK MODE';
-        console.log('SWITCHED TO LIGHT');
-        console.log(getComputedStyle(document.body).backgroundColor)
+darkModeButton.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+
+    githubLogoSrc.style.filter = isDark ? 'invert(1) brightness(2)' : 'invert(0) brightness(1)';
+
+    const action = isDark ? 'add' : 'remove';
+
+    nav.classList[action]('dark-mode');
+    navLeft.classList[action]('dark-mode');
+    navCenter.classList[action]('dark-mode');
+    navNameA.classList[action]('dark-mode');
+    navCenterA.classList[action]('dark-mode');
+    introContainer.classList[action]('dark-mode');
+    introContainerP.classList[action]('dark-mode');
+    introContainerSpan.classList[action]('dark-mode');
+    projectContainer.classList[action]('dark-mode');
+    projectContainerH1.classList[action]('dark-mode');
+    for (const card of projectCard) {
+        card.classList[action]('dark-mode');
     }
-    
+    experienceContainer.classList[action]('dark-mode');
+    experienceContainerH1.classList[action]('dark-mode');
+    experienceContainerH3.classList[action]('dark-mode');
+    experienceContainerP.forEach(p => p.classList[action]('dark-mode'));
+    footerContent.classList[action]('dark-mode');
+    footerContentA.classList[action]('dark-mode');
+    footerContentP.classList[action]('dark-mode');
+    footerContentH2.classList[action]('dark-mode');
+    footerContentH3.classList[action]('dark-mode');
+
+    console.log(`SWITCHED TO ${isDark ? 'DARK' : 'LIGHT'}`);
+    console.log(getComputedStyle(document.body).backgroundColor);
 });

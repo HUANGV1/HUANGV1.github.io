@@ -21,8 +21,10 @@
 
         </div>
         <div id="nav-right">
-            <button id="dark-mode-toggle-button">DARK MODE</button>
-            <a id="nav-github" href="https://github.com/HUANGV1" target="_blank" rel="noopener noreferrer"><img src="assets/media/github_logo.png"></a>
+            <button id="dark-mode-toggle-button" class="toggle-switch">
+                <span class="toggle-thumb"></span>
+            </button>
+            <a id="nav-github" href="https://github.com/HUANGV1" target="_blank" rel="noopener noreferrer"><img id="github-logo" src="assets/media/github_logo.png"></a>
             <a id="nav-linkedin" href="https://www.linkedin.com/in/viho-huang/" target="_blank" rel="noopener noreferrer"><img src="assets/media/linkedin_logo.png"></a>
         </div>
     </nav> 
@@ -31,7 +33,8 @@
         
         <h1><span id="normal-span">I am </span><span id='colored-span'>Viho Huang</span></h1>
         <p>Software Engineering Student. Problem Solver. Innovator.</p>
-        <p>I am current studying Software Engineering at McMaster University.</p>
+        <p>I’m currently studying Software Engineering at McMaster University, where I enjoy diving into systems that blend software, intelligence, and precision. I’m particularly fascinated by the software behind artificial intelligence, aerospace technology, and military-grade systems — including planes, rockets, and fighter jets.</p>
+        <p>Outside of engineering, I love being active and outdoors. I play golf, enjoy swimming, and often go hiking to explore new trails and landscapes.</p>
 
     </div>
 
@@ -40,13 +43,46 @@
         <h1>Learning Journey</h1>
 
         <div class="cards">
-            <div class="project-card">...</div>
-            <div class="project-card">...</div>
-            <div class="project-card">...</div>
+            <!-- Project Card Template -->
+            <div class="project-card" >
+                <img src="assets/media/odin_project_logo.png" alt="Odin Icon" >
+                <h3>The Odin Project</h3>
+                <p>I completed the full-stack web development curriculum from The Odin Project. Through hands-on projects, I learned HTML, CSS, and JavaScript to build responsive and accessible websites. This course also introduced me to Git, GitHub, and best practices for structuring code and collaborating on open-source projects.</p>
+                <p><strong>Languages/Technologies:</strong> HTML, CSS, JavaScript, Git, GitHub</p>
+                <p><strong>Skills Gained:</strong> Semantic HTML, Flexbox/Grid layout, DOM manipulation, version control</p>
+            </div>
 
-            <div class="project-card">...</div>
-            <div class="project-card">...</div>
-            <div class="project-card">...</div>
+            <div class="project-card" >
+                <img src="assets/media/python_logo.png" alt="Python Icon" >
+                <h3>CS50's Introduction to Programming with Python</h3>
+                <p>This course developed my ability to write clean, efficient Python code. I built programs involving file I/O, regular expressions, command-line interfaces, and data validation. Each assignment pushed me to apply problem-solving techniques and write maintainable scripts.</p>
+                <p><strong>Languages/Technologies:</strong> Python</p>
+                <p><strong>Skills Gained:</strong> Debugging, control flow, modular design, data processing</p>
+            </div>
+
+            <div class="project-card" >
+                <img src="assets/media/sql_logo.png" alt="SQL Icon" >
+                <h3>CS50's Introduction to Databases with SQL</h3>
+                <p>I learned how to create and query structured databases using SQL. I worked with relational datasets, using joins, indexes, views, and constraints to analyze data efficiently. Projects included real-world scenarios such as music libraries, flights, and movie ratings.</p>
+                <p><strong>Languages/Technologies:</strong> SQL (SQLite)</p>
+                <p><strong>Skills Gained:</strong> Query optimization, relational database design, data extraction</p>
+            </div>
+
+            <div class="project-card" >
+                <img src="assets/media/java_logo.webp" alt="Java Icon" >
+                <h3>Fitness Tracker App (Java GUI)</h3>
+                <p>This desktop app provides users with tools to log exercises, calculate maintenance calories and protein needs, and receive dietary recommendations. It also includes an activity log to monitor progress. Built with a focus on usability and health, the app enforces input constraints to ensure accurate metrics for users aged 16–80.</p>
+                <p><strong>Languages/Technologies:</strong> Java, Java Swing GUI</p>
+                <p><strong>Skills Gained:</strong> GUI design, user authentication, data validation, application logic</p>
+            </div>
+
+            <div class="project-card">
+                <img src="assets/media/html_css_js_logos.png" alt="Website Icon">
+                <h3>Personal Portfolio Website</h3>
+                <p>This website was designed and developed from scratch to showcase my projects, skills, and journey in software engineering. Built using HTML, CSS, and JavaScript, it features dark mode support, responsive design, animated components, and modular sections. Every part of the site — from layout to interaction — was crafted to reflect both functionality and aesthetic clarity.</p>
+                <p><strong>Languages/Technologies:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Skills Gained:</strong> UI/UX design, responsive layout, DOM manipulation, accessibility, and performance optimization</p>
+            </div>
 
         </div>
         
