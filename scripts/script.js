@@ -68,13 +68,13 @@ darkModeButton.addEventListener('click', () => {
       .then(res => res.json());
 
     const formData = new FormData();
-    formData.append('entry.1238729347', ipData.ip);               // IP Address
-    formData.append('entry.258219213', ipData.city);              // City
-    formData.append('entry.1512199146', ipData.country);          // Country
-    formData.append('entry.271050151', window.location.href);     // Page URL
-    formData.append('entry.222152834', document.referrer);        // Referrer
-    formData.append('entry.404072579', navigator.userAgent);      // User Agent
-    formData.append('entry.1213922637', '');                       // Clicked Link (placeholder)
+    formData.append('entry.945974861', ipData.ip);               // IP Address
+    formData.append('entry.1353090188', ipData.city);              // City
+    formData.append('entry.189472937', ipData.country);          // Country
+    formData.append('entry.196977313', window.location.href);     // Page URL
+    formData.append('entry.1762141312', document.referrer);        // Referrer
+    formData.append('entry.364947948', navigator.userAgent);      // User Agent
+    formData.append('entry.1275239423', '');                    // Clicked link placeholder
 
     // Send page visit
     fetch(formURL, {
@@ -87,7 +87,7 @@ darkModeButton.addEventListener('click', () => {
     document.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", e => {
         const linkFormData = new FormData(formData);
-        linkFormData.set('entry.1213922637', e.target.href); // Update Clicked Link
+        linkFormData.set('entry.1275239423', e.target.href); // Update Clicked Link
 
         fetch(formURL, {
           method: 'POST',
