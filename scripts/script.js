@@ -87,7 +87,8 @@ darkModeButton.addEventListener('click', () => {
     document.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", e => {
         const linkFormData = new FormData(formData);
-        linkFormData.set('entry.1275239423', e.target.href); // Update Clicked Link
+        const url = e.target.closest("a").getAttribute("href"); // Safe way to get actual href
+        linkFormData.set('entry.1275239423', url);  
 
         fetch(formURL, {
           method: 'POST',
