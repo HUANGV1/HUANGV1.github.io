@@ -58,37 +58,44 @@ darkModeButton.addEventListener('click', () => {
 });
 
 
+
 (async () => {
-  const webhookURL = 'https://script.google.com/macros/s/AKfycbzOipwptiT-LGa0JS4PLdIN8HEdqXfWcfBfC4oaGKvs8sPiJ0bNYzCiHYdQIXUdSngL/exec';
+  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSertSoR4fcIp2hjQc7yC3LnbCR1rYqULJzZTYnXdb9MY3IGgw/formResponse';
 
-  const ipData = await fetch("https://ipapi.co/json/").then(res => res.json());
+  try {
+    const ipData = await fetch("https://ipapi.co/json/").then(res => res.json());
 
-  const data = {
-    ip: ipData.ip,
-    country: ipData.country_name,
-    city: ipData.city,
-    page: window.location.href,
-    referrer: document.referrer,
-    clicked: '',  // default empty, filled later
-    userAgent: navigator.userAgent
-  };
+    const formData = new FormData();
+    formData.append('entry.1238729347', ipData.ip);                  // IP Address
+    formData.append('entry.258219213', ipData.city);                 // City
+    formData.append('entry.1512199146', ipData.country_name);        // Country
+    formData.append('entry.271050151', window.location.href);        // Page URL
+    formData.append('entry.222152834', document.referrer);           // Referrer
+    formData.append('entry.404072579', navigator.userAgent);         // User Agent
+    formData.append('entry.1213922637', '');                          // Clicked Link placeholder
 
-  // Send visit data on page load
-  fetch(webhookURL, {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: { "Content-Type": "application/json" }
-  });
+    // Send visit event
+    fetch(formURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
 
-  // Add link click tracking
-  document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", e => {
-      data.clicked = e.target.href;
-      fetch(webhookURL, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
+    // Track link clicks
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        const linkFormData = new FormData(formData);
+        linkFormData.set('entry.1213922637', e.target.href); // Log clicked link
+
+        fetch(formURL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: linkFormData
+        });
       });
     });
-  });
+
+  } catch (err) {
+    console.error("Analytics tracking failed:", err);
+  }
 })();
