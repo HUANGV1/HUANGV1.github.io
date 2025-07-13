@@ -86,8 +86,13 @@ darkModeButton.addEventListener('click', () => {
     // Track link clicks
     document.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", e => {
+        const anchor = e.target.closest("a");
+        const url = anchor?.getAttribute("href");
+
+        // ✅ If it's a same-page anchor link, let it scroll naturally
+        if (url && url.startsWith("#")) return;
+
         e.preventDefault();
-        const url = e.target.closest("a").getAttribute("href");
 
         const linkFormData = new FormData();
         linkFormData.append('entry.945974861', ipData.ip);
@@ -102,12 +107,10 @@ darkModeButton.addEventListener('click', () => {
             method: 'POST',
             mode: 'no-cors',
             body: linkFormData
-        }).finally(() => {
-            setTimeout(() => {
-                window.open(url, '_blank');
-            }, 300);
-            });
         });
+
+        window.open(url, '_blank');
+      });
     });
 
   } catch (err) {
