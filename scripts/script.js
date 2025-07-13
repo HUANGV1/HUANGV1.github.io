@@ -86,19 +86,32 @@ darkModeButton.addEventListener('click', () => {
     // Track link clicks
     document.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", e => {
-        const linkFormData = new FormData(formData);
-        const url = e.target.closest("a").getAttribute("href"); // Safe way to get actual href
-        linkFormData.set('entry.1275239423', url);  
+        e.preventDefault();
+        const url = e.target.closest("a").getAttribute("href");
+
+        const linkFormData = new FormData();
+        linkFormData.append('entry.945974861', ipData.ip);
+        linkFormData.append('entry.1353090188', ipData.city);
+        linkFormData.append('entry.189472937', ipData.country);
+        linkFormData.append('entry.196977313', window.location.href);
+        linkFormData.append('entry.1762141312', document.referrer);
+        linkFormData.append('entry.364947948', navigator.userAgent);
+        linkFormData.append('entry.1275239423', url);
 
         fetch(formURL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: linkFormData
+            method: 'POST',
+            mode: 'no-cors',
+            body: linkFormData
+        }).finally(() => {
+            setTimeout(() => {
+                window.location.href = url;
+            }, 300);
+            });
         });
-      });
     });
 
   } catch (err) {
     console.error("Analytics tracking failed:", err);
   }
 })();
+
