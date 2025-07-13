@@ -104,7 +104,7 @@ darkModeButton.addEventListener('click', () => {
             body: linkFormData
         }).finally(() => {
             setTimeout(() => {
-                window.location.href = url;
+                window.open(url, '_blank');
             }, 300);
             });
         });
