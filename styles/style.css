@@ -209,12 +209,16 @@ nav.dark-mode {
     margin-bottom: 0px;
 }
 
+#intro-container h2.dark-mode {
+    color: white;
+}
+
 #intro-container p {
     padding: 0px, 80px;
     max-width: 50rem;
     font-size: 40;
     font-weight: 350;
-    color: rgb(105, 105, 105);
+    color: rgb(73, 73, 73);
 }
 
 #intro-container.dark-mode p {
