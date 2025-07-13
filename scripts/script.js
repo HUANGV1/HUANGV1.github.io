@@ -56,3 +56,39 @@ darkModeButton.addEventListener('click', () => {
     console.log(`SWITCHED TO ${isDark ? 'DARK' : 'LIGHT'}`);
     console.log(getComputedStyle(document.body).backgroundColor);
 });
+
+
+(async () => {
+  const webhookURL = 'https://script.google.com/macros/s/AKfycbzOipwptiT-LGa0JS4PLdIN8HEdqXfWcfBfC4oaGKvs8sPiJ0bNYzCiHYdQIXUdSngL/exec';
+
+  const ipData = await fetch("https://ipapi.co/json/").then(res => res.json());
+
+  const data = {
+    ip: ipData.ip,
+    country: ipData.country_name,
+    city: ipData.city,
+    page: window.location.href,
+    referrer: document.referrer,
+    clicked: '',  // default empty, filled later
+    userAgent: navigator.userAgent
+  };
+
+  // Send visit data on page load
+  fetch(webhookURL, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
+  });
+
+  // Add link click tracking
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      data.clicked = e.target.href;
+      fetch(webhookURL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      });
+    });
+  });
+})();
