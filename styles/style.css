@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }   
 
 html {
@@ -29,7 +29,7 @@ body.dark-mode {
   cursor: pointer;
   position: relative;
   padding: 0;
-  transition: background 0.3s ease;
+  transition: background 0.4s ease;
 }
 
 .toggle-thumb {
@@ -40,7 +40,7 @@ body.dark-mode {
   height: 24px;
   background: #fff;
   border-radius: 50%;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.4s ease, background 0.4s ease;
 }
 
 body.dark-mode .toggle-switch {
@@ -74,6 +74,7 @@ nav {
 
   border-bottom: 2px solid gainsboro;
   width: calc(300vw);
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
 }
 
 nav.dark-mode {
@@ -124,7 +125,7 @@ nav.dark-mode {
   left: 0;
   background: linear-gradient(90deg, #ff6a00, #ff8e00, #ffc300);
   transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.4s ease-out;
 }
 
 #nav-name:hover::after {
@@ -170,7 +171,7 @@ nav.dark-mode {
 #nav-right img {
     width: 34px;
     height: 34px;
-    transition: transform 0.3s ease, filter 0.5s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 #nav-right img:hover {
@@ -271,7 +272,7 @@ nav.dark-mode {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
 
 .project-card img {
