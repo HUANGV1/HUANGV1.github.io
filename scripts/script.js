@@ -21,6 +21,7 @@ const footerContentH2 = document.querySelector('#footer-content h2');
 const footerContentH3 = document.querySelector('#footer-content h3');
 const githubLogoSrc = document.getElementById('github-logo');
 const introH2 = document.querySelector('#intro-container h2');
+const InternshipList = document.querySelector('#experience-container ul');
 
 darkModeButton.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark-mode');
@@ -52,6 +53,7 @@ darkModeButton.addEventListener('click', () => {
     footerContentH2.classList[action]('dark-mode');
     footerContentH3.classList[action]('dark-mode');
     introH2.classList[action]('dark-mode');
+    InternshipList.classList[action]('dark-mode');
 
     console.log(`SWITCHED TO ${isDark ? 'DARK' : 'LIGHT'}`);
     console.log(getComputedStyle(document.body).backgroundColor);

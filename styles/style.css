@@ -219,9 +219,15 @@ nav.dark-mode {
     font-size: 40;
     font-weight: 350;
     color: rgb(73, 73, 73);
+    text-align: center;
 }
 
 #intro-container.dark-mode p {
+    color: white;
+}
+
+
+ul.dark-mode li {
     color: white;
 }
 
